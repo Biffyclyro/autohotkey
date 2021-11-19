@@ -8,9 +8,9 @@ def on_press(key):
     if key == keyboard.Key.space:
         word = ""
 
-    elif key == keyboard.backspace:
-        word.pop()
-    elif key != 'Key.backspace':
+    elif key == keyboard.Key.backspace:
+        word = word[:-1]
+    elif hasattr(key, 'char'):
         word += key.char
         print('a',word)
 
