@@ -1,28 +1,46 @@
 from pynput import keyboard
-import clipboard
+#import clipboard
 
 word = ""
+auto_press = False
 
 
 def paste_hotkey(text):
+    global auto_press
+    auto_press = True
     key_controller = keyboard.Controller()
-    print('chegou aqui')
-    #key_controller.type(text)
+    with key_controller.pressed(keyboard.Key.ctrl):
+        key_controller.tap(keyboard.Key.left)
+    
+    with key_controller.pressed(keyboard.Key.ctrl):
+        with key_controller.pressed(keyboard.Key.shift):
+            key_controller.tap(keyboard.Key.right)
+    
+    key_controller.tap(keyboard.Key.delete)
+
+    key_controller.type(text)
+
 
 def on_press(key):
     global word
+    global auto_press
     print(key)
-    if key == keyboard.Key.space:
-        word = ""
+    
+    if not auto_press:
 
-    elif key == keyboard.Key.backspace:
-        word = word[:-1]
-    elif hasattr(key, 'char'):
-        word += key.char
+        if key == keyboard.Key.space:
+            word = ""
+
+        elif key == keyboard.Key.backspace:
+            word = word[:-1]
+        elif hasattr(key, 'char'):
+            word += key.char
         #print('a',word)
 
-    if word == "teste":
-        paste_hotkey('escreve isso')
+        if word == "teste":
+            paste_hotkey('escreve isso')
+            word = ""
+            auto_press = False
         #clipboard.copy('era pra funcionar assim')
         #with key_controller.press(keyboard.Key.ctrl.value):
         #    key_controller.press('v')
