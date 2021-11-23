@@ -2,8 +2,7 @@ from pynput import keyboard
 
 word = ""
 auto_press = False
-hotkeys = []
-
+hotkeys = {}
 
 def paste_hotkey(text):
     global auto_press
@@ -36,19 +35,17 @@ def on_press(key):
         elif hasattr(key, 'char'):
             word += key.char
 
-        if word == "teste":
-            paste_hotkey('escreve isso, porém é uma frase maior pra eu ver se demora muito pra ela escrever ou algo assim')
+        if word in hotkeys.keys():
+            paste_hotkey(hotkeys[word])
             word = ""
             auto_press = False
 
 with open('template.txt', 'r') as template:
     for line in template.readlines():
         key_value = line.split(":");
-        hotkey = {}
-        hotkey[key_value[0]] = key_value[1]
-        hotkeys.append(hotkey) 
+        hotkeys[key_value[0]] = key_value[1][:-1]
 
-print(hotkeys)
+
 listener = keyboard.Listener(on_press=on_press)
 listener.start()
 listener.join()
