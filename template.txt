@@ -1,0 +1,2 @@
+hotkey: Frase que deve ser colada quando a chave for digitada
+outrahotkey: Segunda frase que deve ser colada para teste
