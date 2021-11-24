@@ -8,12 +8,12 @@ def paste_hotkey(text):
     global auto_press
     auto_press = True
     key_controller = keyboard.Controller()
-    with key_controller.pressed(keyboard.Key.ctrl):
-        key_controller.tap(keyboard.Key.left)
+    #with key_controller.pressed(keyboard.Key.ctrl):
+    #    key_controller.tap(keyboard.Key.left)
     
     with key_controller.pressed(keyboard.Key.ctrl):
         with key_controller.pressed(keyboard.Key.shift):
-            key_controller.tap(keyboard.Key.right)
+            key_controller.tap(keyboard.Key.left)
     
     key_controller.tap(keyboard.Key.delete)
 
