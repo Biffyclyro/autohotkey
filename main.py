@@ -23,7 +23,7 @@ def paste_hotkey(text):
 def on_press(key):
     global word
     global auto_press
-    print(key)
+    #print(key)
     
     if not auto_press:
 
@@ -40,9 +40,9 @@ def on_press(key):
             word = ""
             auto_press = False
 
-with open('template.txt', 'r') as template:
+with open('template.txt', 'r', encoding='utf-8') as template:
     for line in template.readlines():
-        key_value = line.split(":");
+        key_value = line.split("::");
         hotkeys[key_value[0]] = key_value[1][:-1]
 
 
