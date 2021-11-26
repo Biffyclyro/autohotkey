@@ -21,12 +21,13 @@ def paste_hotkey(text):
 def on_press(key):
     global word
     global auto_press
-    #print(word)
-    
     if not auto_press:
 
-        if key == keyboard.Key.space:
+        if key == keyboard.Key.space or key == keyboard.Key.enter:
             word = ""
+
+        elif key == keyboard.Key.backspace: 
+            word = word[:-1] 
 
         elif hasattr(key, 'char'):
             word += key.char
@@ -38,7 +39,7 @@ def on_press(key):
 
 with open('template.txt', 'r', encoding='utf-8') as template:
     for line in template.readlines():
-        key_value = line.split("::");
+        key_value = line.split("::")
         hotkeys[key_value[0]] = key_value[1][:-1]
 
 

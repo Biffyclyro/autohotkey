@@ -5,7 +5,6 @@ name = "pypi"
 
 [packages]
 pynput = "*"
-clipboard = "*"
 pyautogui = "*"
 
 [dev-packages]
