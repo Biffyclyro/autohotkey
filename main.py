@@ -23,7 +23,7 @@ def on_press(key):
     global auto_press
     if not auto_press:
 
-        if key == keyboard.Key.space or key == keyboard.Key.enter:
+        if key == keyboard.Key.enter:
             word = ""
 
         elif key == keyboard.Key.backspace: 
@@ -32,10 +32,13 @@ def on_press(key):
         elif hasattr(key, 'char'):
             word += key.char
 
-        if word in hotkeys.keys():
-            paste_hotkey(hotkeys[word])
+        if key == keyboard.Key.space:
+
+            if word in hotkeys.keys():
+                paste_hotkey(hotkeys[word])
+                auto_press = False
+
             word = ""
-            auto_press = False
 
 with open('template.txt', 'r', encoding='utf-8') as template:
     for line in template.readlines():
