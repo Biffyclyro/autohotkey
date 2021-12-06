@@ -40,11 +40,10 @@ def on_press(key):
 
             word = ""
 
-with open('template.txt', 'r', encoding='utf-8') as template:
+with open('template.txt', 'r', encoding='utf-8-sig') as template:
     for line in template.readlines():
         key_value = line.split("::")
         hotkeys[key_value[0]] = key_value[1][:-1]
-
 
 listener = keyboard.Listener(on_press=on_press)
 listener.start()
