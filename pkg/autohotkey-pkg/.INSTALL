@@ -1,9 +1,4 @@
 post_install() {
-  mkdir -p /home/$USER/.config/autohotkey
-
-  cp template.txt.exemple /home/$USER/.config/autohotkey/template.txt
-
-
   cd /usr/lib/autohotkey-pkg/
-  pipenv install --deploy
+  pipenv install 
 }
