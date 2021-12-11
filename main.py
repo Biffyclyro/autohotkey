@@ -1,5 +1,7 @@
 from pynput import keyboard
+from pathlib import Path
 
+home = str(Path.home())
 word = ""
 auto_press = False
 hotkeys = {}
@@ -40,7 +42,7 @@ def on_press(key):
 
             word = ""
 
-with open('template.txt', 'r', encoding='utf-8-sig') as template:
+with open(f'{home}/.config/autohotkey/template.txt', 'r', encoding='utf-8-sig') as template:
     for line in template.readlines():
         key_value = line.split("::")
         hotkeys[key_value[0]] = key_value[1][:-1]
