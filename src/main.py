@@ -1,0 +1,1 @@
+/home/biffyclyro/Desktop/projetos/python/autohotkey/main.py

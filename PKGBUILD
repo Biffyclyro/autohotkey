@@ -15,6 +15,7 @@ package() {
   cp "${srcdir}/main.py" "${pkgdir}/usr/lib/$pkgname/"
   cp "${srcdir}/Pipfile" "${pkgdir}/usr/lib/$pkgname/"
   cp "${srcdir}/Pipfile.lock" "${pkgdir}/usr/lib/$pkgname/"
+  cp "${srcdir}/template.txt.exemple" "${pkgdir}/usr/lib/$pkgname/"
   cp "${srcdir}/autohotkey" "${pkgdir}/usr/bin/"
   sh "${srcdir}/autohotkey.service.config" $srcdir $pkgdir
   chmod +x "${pkgdir}/usr/lib/$package"

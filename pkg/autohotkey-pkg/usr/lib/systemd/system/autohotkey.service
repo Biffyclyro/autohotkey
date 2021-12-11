@@ -1,0 +1,10 @@
+[Service]
+  User=biffyclyro
+  WorkingDirectory=/usr/bin/
+  ExecStart=autohotkey
+  Environment=DISPLAY=:0
+  Environment=XAUTHORITY=/home/biffyclyro/.Xauthority
+
+  [Install]
+  WantedBy=multi-user.target
+  WantedBy=xsession.target
