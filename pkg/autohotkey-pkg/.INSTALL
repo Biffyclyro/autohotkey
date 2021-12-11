@@ -1,4 +1,0 @@
-post_install() {
-  cd /usr/lib/autohotkey-pkg/
-  pipenv install 
-}
