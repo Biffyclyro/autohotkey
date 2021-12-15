@@ -31,7 +31,7 @@ def on_press(key):
         elif key == keyboard.Key.backspace: 
             word = word[:-1] 
 
-        elif hasattr(key, 'char'):
+        elif hasattr(key, 'char') and type(key.char) != NoneType:
             word += key.char
 
         if key == keyboard.Key.space:
