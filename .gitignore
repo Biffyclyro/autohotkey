@@ -1,6 +1,5 @@
 template.txt
 pkg
 src
-*.gz
+*.zst
 *.tar
-*.pkg
