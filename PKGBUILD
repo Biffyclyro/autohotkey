@@ -7,10 +7,9 @@ depends=("python" "python-pipenv")
 makedepends=("git")
 license=("custom")
 install=autohotkey.install
-#source=("main.py" "Pipfile" "Pipfile.lock" "create.config" "template.txt.exemple" "autohotkey")
-#sha512sums=("SKIP" "SKIP" "SKIP" "SKIP" "SKIP" "SKIP")
-source=("${pkgname%-git}::git+https://github.com/Biffyclyro/autohotkey.git")
-sha512sums=("SKIP")
+source=("main.py" "Pipfile" "Pipfile.lock" "create.config" "template.txt.exemple" "autohotkey")
+sha512sums=("SKIP" "SKIP" "SKIP" "SKIP" "SKIP" "SKIP")
+
 package() {
   mkdir -p "${pkgdir}/usr/bin"
   mkdir -p "${pkgdir}/usr/lib/systemd/system"
