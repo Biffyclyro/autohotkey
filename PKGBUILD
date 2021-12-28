@@ -3,7 +3,7 @@ pkgver="1.0.0"
 pkgrel="1"
 pkgdesc="Autohotkey for linux"
 arch=("x86_64")
-depends=("python" "python-pipenv")
+depends=("python>=3.10.1" "python-pipenv>=2021.11.23")
 makedepends=("git")
 license=("custom")
 install=autohotkey.install
