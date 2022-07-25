@@ -7,7 +7,7 @@ depends=("python>=3.10.1" "python-pipenv>=2021.11.23")
 makedepends=("git")
 license=("custom")
 install=autohotkey.install
-source=("main.py" "Pipfile" "Pipfile.lock" "create.config" "template.txt.exemple" "autohotkey")
+source=("main.py" "Pipfile" "Pipfile.lock" "create.config" "template.txt.example" "autohotkey")
 sha512sums=("SKIP" "SKIP" "SKIP" "SKIP" "SKIP" "SKIP")
 
 package() {
