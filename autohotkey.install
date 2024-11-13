@@ -2,7 +2,8 @@ post_install() {
 
   cd /usr/lib/autohotkey-pkg/
 
-  PIPENV_VENV_IN_PROJECT=1 pipenv install
+  ./install-env
+
 }
 
 post_remove() {
